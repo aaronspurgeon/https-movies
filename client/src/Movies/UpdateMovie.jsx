@@ -27,6 +27,13 @@ function UpdateMovie(props) {
         })
     }
 
+    const handleStars = (e) => {
+        setMovie({
+            ...movie,
+            stars: e.target.value
+        })
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -48,7 +55,7 @@ function UpdateMovie(props) {
                 <input type="text" name='title' placeholder='Enter new title' value={movie.title} onChange={handleChange} />
                 <input type="text" name='director' placeholder='Enter new director' value={movie.director} onChange={handleChange} />
                 <input type="text" name='metascore' placeholder='Enter new metascore' value={movie.metascore} onChange={handleChange} />
-                <input type="text" name='stars[]' placeholder='Update Actors/Actresses' value='Star list' onChange={handleChange} />
+                {/* <input type="text" name='stars' placeholder='Update Actors/Actresses' value={movie.stars} onChange={e => handleStars(e, movie)} /> */}
 
                 <button type='submit'>Save</button>
             </form>
